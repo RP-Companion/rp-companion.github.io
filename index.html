@@ -13,7 +13,7 @@
 <script src="https://js.puter.com/v2/"></script>
 <style>
 :root{--bg:#111613;--panel:#1b211c;--panel2:#202820;--ink:#eee8d8;--mute:#9e9d8e;--line:#3b4135;--acc:#d3ad70;--acc2:#98794f;--accbg:#312c21;--bad:#cf8273;--ok:#8fa782;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-:root[data-theme="parchment"]{--bg:#eee9dd;--panel:#f8f5ed;--panel2:#e8e1d2;--ink:#24271f;--mute:#747569;--line:#d5cdbb;--acc:#8d6835;--acc2:#a8844e;--accbg:#e9dfca;--bad:#a64d43;--ok:#557450;color-scheme:light}
+:root[data-theme="parchment"]{--bg:#d8ccb3;--panel:#eee4cf;--panel2:#e0d2b5;--ink:#30271d;--mute:#786a53;--line:#b8a786;--acc:#89622e;--acc2:#a98148;--accbg:#e6d7b8;--bad:#8d4a3d;--ok:#596b4c;color-scheme:light}
 :root[data-theme="midnight"]{--bg:#101722;--panel:#192332;--panel2:#202d40;--ink:#e8edf4;--mute:#9aa9bc;--line:#344458;--acc:#a9c5e5;--acc2:#6687ad;--accbg:#24374d;--bad:#e29b91;--ok:#95b99a}
 :root[data-theme="wine"]{--bg:#191216;--panel:#251a21;--panel2:#30212b;--ink:#f0e6e8;--mute:#b3a0a7;--line:#49343f;--acc:#d8a7b6;--acc2:#9e657a;--accbg:#3b2631;--bad:#e59584;--ok:#a5bd91}
 :root[data-theme="pine"]{--bg:#101916;--panel:#18231e;--panel2:#203029;--ink:#e8eee8;--mute:#9baea2;--line:#35483c;--acc:#a8c5a3;--acc2:#6f9274;--accbg:#24382b;--bad:#d99082;--ok:#9fc38d}
@@ -112,7 +112,7 @@ body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;back
 main{z-index:1}
 #app>header{z-index:100}
 :root[data-theme="bohemia"] body:before{background-image:linear-gradient(180deg,color-mix(in srgb,var(--bg) 48%,transparent),color-mix(in srgb,var(--bg) 70%,transparent)),url("https://www.deepsilver.com/media/uocbzxol/kcd2_wallpaper-main-keyart_desktop_3840x2160.jpg")}
-:root[data-theme="parchment"] body:before{background-image:linear-gradient(180deg,color-mix(in srgb,var(--bg) 48%,transparent),color-mix(in srgb,var(--bg) 70%,transparent)),url("https://www.deepsilver.com/media/akobvqnn/kcd2-shepherd-wallpaper-fullhd.jpg")}
+:root[data-theme="parchment"] body:before{background-image:linear-gradient(180deg,rgba(54,43,27,.2),rgba(54,43,27,.46)),url("https://www.deepsilver.com/media/0lnnsyd3/kcd2-rest-wallpaper-ultrawide.jpg")}
 :root[data-theme="midnight"] body:before{background-image:linear-gradient(180deg,color-mix(in srgb,var(--bg) 48%,transparent),color-mix(in srgb,var(--bg) 70%,transparent)),url("https://www.deepsilver.com/media/zmfdu3sy/kcd2_wallpaper-secondary-keyart_desktop_3840x2160.jpg")}
 :root[data-theme="wine"] body:before{background-image:linear-gradient(180deg,color-mix(in srgb,var(--bg) 48%,transparent),color-mix(in srgb,var(--bg) 70%,transparent)),url("https://www.deepsilver.com/media/dh2jw1g5/kcd2_bathhouse-wallpaper-fullhd.jpg")}
 :root[data-theme="pine"] body:before{background-image:linear-gradient(180deg,color-mix(in srgb,var(--bg) 48%,transparent),color-mix(in srgb,var(--bg) 70%,transparent)),url("https://www.deepsilver.com/media/akobvqnn/kcd2-shepherd-wallpaper-fullhd.jpg")}
@@ -132,18 +132,6 @@ body:after{content:"";position:fixed;inset:11px;z-index:1;pointer-events:none;bo
 .ambient-scene:before,.ambient-scene:after{content:"";position:absolute;inset:-18%;background:radial-gradient(ellipse at 78% 75%,color-mix(in srgb,var(--acc) 15%,transparent),transparent 34%),radial-gradient(ellipse at 18% 30%,rgba(175,186,190,.09),transparent 39%);will-change:transform,opacity}
 .ambient-scene:before{animation:mist-drift 25s ease-in-out infinite alternate;opacity:.72}
 .ambient-scene:after{background:radial-gradient(ellipse at 42% 82%,rgba(190,198,190,.09),transparent 36%),radial-gradient(ellipse at 90% 24%,color-mix(in srgb,var(--acc2) 12%,transparent),transparent 30%);animation:mist-drift-reverse 34s ease-in-out infinite alternate;opacity:.6}
-.ambient-portrait{position:fixed;z-index:0;right:8px;bottom:-7px;width:100px;height:min(48vh,350px);pointer-events:none;opacity:.58;transform-origin:center bottom;animation:portrait-idle 7s ease-in-out infinite;will-change:transform;background-repeat:no-repeat;background-size:auto 100%;background-position:center bottom;filter:grayscale(1) contrast(1.08) brightness(.72) sepia(.22) drop-shadow(0 7px 10px rgba(0,0,0,.22));-webkit-mask-image:radial-gradient(ellipse 82% 72% at 72% 50%,#000 28%,transparent 100%);mask-image:radial-gradient(ellipse 82% 72% at 72% 50%,#000 28%,transparent 100%)}
-:root[data-theme="bohemia"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/uocbzxol/kcd2_wallpaper-main-keyart_desktop_3840x2160.jpg")}
-:root[data-theme="parchment"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/akobvqnn/kcd2-shepherd-wallpaper-fullhd.jpg")}
-:root[data-theme="midnight"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/zmfdu3sy/kcd2_wallpaper-secondary-keyart_desktop_3840x2160.jpg")}
-:root[data-theme="wine"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/dh2jw1g5/kcd2_bathhouse-wallpaper-fullhd.jpg")}
-:root[data-theme="pine"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/akobvqnn/kcd2-shepherd-wallpaper-fullhd.jpg")}
-:root[data-theme="slate"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/t3wkgqvb/kcd2_hardcoremode_desktop.jpg")}
-:root[data-theme="kuttenberg"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/kumdspxl/kcd2_social_backgrounds_251128_4k.jpg")}
-:root[data-theme="trosky"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/kfxbcniy/kcd2-marching-wallpaper-fullhd.jpg")}
-:root[data-theme="royal"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/nuhnnymt/kcd2_re_desktop_3840x2160.jpg")}
-:root[data-theme="embers"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/mwbjh3r3/kcd2_wallpaper-gold-keyart_desktop_3840x2160.jpg")}
-:root[data-theme="frost"] .ambient-portrait{background-image:url("https://www.deepsilver.com/media/3kfkaky0/kcd2_mysteria_desktop_3840x2160.jpg")}
 .scene-embers{position:absolute;inset:0;overflow:hidden}
 .scene-embers i{position:absolute;bottom:-12px;width:3px;height:3px;border-radius:50%;background:var(--acc);box-shadow:0 0 8px 2px color-mix(in srgb,var(--acc) 65%,transparent);opacity:0;animation:ember-rise 10s linear infinite}
 .scene-embers i:nth-child(1){left:17%;animation-delay:-2s;animation-duration:11s}.scene-embers i:nth-child(2){left:31%;animation-delay:-8s;animation-duration:14s}.scene-embers i:nth-child(3){left:52%;animation-delay:-4s;animation-duration:12s}.scene-embers i:nth-child(4){left:71%;animation-delay:-10s;animation-duration:15s}.scene-embers i:nth-child(5){left:86%;animation-delay:-6s;animation-duration:13s}
@@ -151,11 +139,11 @@ body:after{content:"";position:fixed;inset:11px;z-index:1;pointer-events:none;bo
 @keyframes mist-drift{from{transform:translate3d(-2%,1%,0)}to{transform:translate3d(2%,-1%,0)}}
 @keyframes mist-drift-reverse{from{transform:translate3d(2%,-1%,0)}to{transform:translate3d(-2%,1%,0)}}
 @keyframes ember-rise{0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}18%{opacity:.8}82%{opacity:.45}100%{opacity:0;transform:translate3d(18px,-70vh,0) scale(1.35)}}
-@keyframes portrait-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@media(min-width:1200px){.ambient-portrait{width:min(30vw,390px);height:78vh;right:calc((100vw - 760px)/2 - 405px);opacity:.64;background-size:auto 100%}}
-@media(max-width:1199px){.ambient-portrait{display:none}.scene-embers i:nth-child(n+4){display:none}body:before{animation-duration:38s}}
+@media(min-width:1200px){:root[data-theme="parchment"] body:before{background-size:100% 100%,auto 190vh;background-position:0 0,left 38%}}
+@media(max-width:1199px){.scene-embers i:nth-child(n+4){display:none}body:before{animation-duration:38s}}
 @media(max-width:760px){body:after{display:none}}
-@media(prefers-reduced-motion:reduce){body:before,.ambient-scene:before,.ambient-scene:after,.ambient-portrait,.scene-embers i{animation:none!important;will-change:auto!important}}
+:root[data-theme="parchment"] body:before{filter:grayscale(.24) sepia(.32) brightness(.84) contrast(1.05);opacity:.76}
+@media(prefers-reduced-motion:reduce){body:before,.ambient-scene:before,.ambient-scene:after,.scene-embers i{animation:none!important;will-change:auto!important}}
 </style>
 </head>
 <body>
@@ -203,7 +191,7 @@ var LINES={
 };
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
 function newChar(){var c={id:uid(),name:"Новый персонаж",faction:"",status:"",backstory:"",hp:10,hpMax:10,res:[],rel:[],notes:""};S.unshift(c);cur=c.id;tab="main";save();render()}
-var knightMarkup='<div class="ambient-scene" aria-hidden="true"><div class="ambient-portrait"></div><div class="scene-embers"><i></i><i></i><i></i><i></i><i></i></div></div>' ;
+var knightMarkup='<div class="ambient-scene" aria-hidden="true"><div class="scene-embers"><i></i><i></i><i></i><i></i><i></i></div></div>' ;
 function render(){var a=document.getElementById("app");a.innerHTML=knightMarkup+(languageBusy?'<div class="translation-status" role="status" aria-live="polite"><span class="translation-spinner" aria-hidden="true"></span>'+esc(translationStatus())+'</div>':"")+(cur&&ch()?sheet():list());applyPrefs();a.classList.toggle("is-translating",languageBusy);a.ontouchstart=function(e){if(e.touches.length===1)this._swipeStart=[e.touches[0].clientX,e.touches[0].clientY]};a.ontouchend=function(e){if(!cur||!this._swipeStart||!e.changedTouches.length)return;var x=e.changedTouches[0].clientX-this._swipeStart[0],y=e.changedTouches[0].clientY-this._swipeStart[1],target=e.target;this._swipeStart=null;if(Math.abs(x)<72||Math.abs(y)>48||target.closest("input,textarea,select,button,a"))return;var order=["main","rel","log","ask","notes","gen"],i=order.indexOf(tab),next=order[i+(x<0?1:-1)];if(next){tab=next;render();var active=document.querySelector(".tabs [aria-selected=true]");if(active)active.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}}
 function list(){
  var h='<header><div class="brand"><span class="brand-mark">✦</span><div><h1>RP Companion</h1><span class="brand-note">Личный журнал персонажа</span></div></div>'+prefs()+'<button class="p" onclick="newChar()">＋ Новый персонаж</button></header>';
