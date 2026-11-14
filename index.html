@@ -73,22 +73,18 @@ function newChar(){var c={id:uid(),name:"Новый персонаж",faction:""
 function render(){var a=document.getElementById("app");a.innerHTML=(cur&&ch()?sheet():list())}
 function list(){
  var h='<header><h1>RP Companion</h1><button class="p" onclick="newChar()">Новый персонаж</button></header>';
- if(!S.length)h+='<div class="empty">Персонажей пока нет.<br>Создайте первого — квента, связи и ресурсы будут под рукой во время игры.</div>';
- S.forEach(function(c){h+='<div class="card"><button class="ch" style="border:0;padding:0;background:none" onclick="cur=\''+c.id+'\';tab=\'main\';render()"><span><b>'+esc(c.name)+'</b><br><span class="mute">'+esc(c.faction||"Без фракции")+'</span></span><span class="badge">HP '+c.hp+'/'+c.hpMax+'</span></button></div>'});
+ if(!S.length)h+='<div class="empty">Персонажей пока нет.<br>Создайте первого — квента и связи будут под рукой во время игры.</div>';
+ S.forEach(function(c){h+='<div class="card"><button class="ch" style="border:0;padding:0;background:none" onclick="cur=\''+c.id+'\';tab=\'main\';render()"><span><b>'+esc(c.name)+'</b><br><span class="mute">'+esc(c.faction||"Без фракции")+'</span></span></button></div>'});
  h+='<div class="card"><b>Копия данных</b><p class="mute">Данные хранятся только в этом браузере. Скопируйте их, чтобы не потерять.</p><div class="row"><button onclick="exp()">Показать копию</button><button onclick="imp()">Восстановить</button></div><textarea id="bk" placeholder="Здесь появится копия или вставьте её для восстановления"></textarea></div>';
  h+=puterui();return h}
 function exp(){document.getElementById("bk").value=JSON.stringify(S)}
 function imp(){try{var v=JSON.parse(document.getElementById("bk").value);if(!Array.isArray(v))throw 0;S=v;save();render()}catch(e){alert("Не получилось прочитать копию. Вставьте текст целиком.")}}
 function sheet(){
- var c=ch(),T=[["main","Основное"],["res","Ресурсы"],["rel","Связи"],["log","Журнал"],["ask","Спросить"],["notes","Заметки"],["gen","Генератор"]];
+ var c=ch(),T=[["main","Основное"],["rel","Связи"],["log","Журнал"],["ask","Спросить"],["notes","Заметки"],["gen","Генератор"]];
  var h='<header><button onclick="cur=null;render()">Назад</button><h2>'+esc(c.name)+'</h2><button class="d" onclick="del()">Удалить</button></header><div class="tabs" role="tablist">';
  T.forEach(function(t){h+='<button role="tab" aria-selected="'+(tab===t[0])+'" onclick="tab=\''+t[0]+'\';render()">'+t[1]+'</button>'});
  h+='</div>';
  if(tab==="main")h+='<label>Имя</label><input value="'+esc(c.name)+'" oninput="up(\'name\',this.value)"><label>Фракция</label><input value="'+esc(c.faction)+'" oninput="up(\'faction\',this.value)"><label>Статус</label><input value="'+esc(c.status)+'" placeholder="Например: в розыске, ранен, на задании" oninput="up(\'status\',this.value)"><label>Квента</label><textarea oninput="up(\'backstory\',this.value)">'+esc(c.backstory)+'</textarea>'+bioui();
- if(tab==="res"){var p=c.hpMax?Math.max(0,Math.min(100,c.hp/c.hpMax*100)):0;
-  h+='<div class="card"><b>Здоровье: '+c.hp+' / '+c.hpMax+'</b><div class="bar"><i style="width:'+p+'%"></i></div><div class="row"><button onclick="hp(-5)">−5</button><button onclick="hp(-1)">−1</button><button onclick="hp(1)">+1</button><button onclick="hp(5)">+5</button></div><label>Максимум здоровья</label><input type="number" value="'+c.hpMax+'" oninput="c2(this.value)"></div>';
-  c.res.forEach(function(r,i){h+='<div class="card"><div class="row"><b>'+esc(r.n)+'</b><span class="s"><button onclick="rv('+i+',-1)">−</button> <b>'+r.v+'</b> <button onclick="rv('+i+',1)">+</button> <button class="d" onclick="rd('+i+')">×</button></span></div></div>'});
-  h+='<div class="row"><input id="rn" placeholder="Новый ресурс: деньги, патроны, еда"><button class="s p" onclick="ra()">Добавить</button></div>'}
  if(tab==="rel"){
   if(!c.rel.length)h+='<div class="empty">Связей нет. Добавьте семью, друзей, врагов и должников.</div>';
   c.rel.forEach(function(r,i){h+='<div class="card"><div class="row"><div><b>'+esc(r.n)+'</b><br><span class="mute">'+esc(r.t)+'</span></div><span class="s"><button class="d" onclick="xd('+i+')">×</button></span></div></div>'});
